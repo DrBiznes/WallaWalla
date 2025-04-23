@@ -68,24 +68,6 @@ Use this for adding notes to the sidebars:
 </div>
 ```
 
-### Census Chart Component
-
-Here's how to use the example CensusChart component:
-
-```jsx
-import { CensusChart } from '../components/charts/CensusChart'
-
-<CensusChart 
-  title="Population by Age" 
-  data={[
-    { age: "0-18", count: 7250 },
-    { age: "19-35", count: 9830 },
-    { age: "36-55", count: 8450 },
-    { age: "56+", count: 7470 }
-  ]} 
-/>
-```
-
 ## Styling
 
 All MDX styling is handled through CSS classes in `App.css`. This includes:
@@ -98,13 +80,6 @@ All MDX styling is handled through CSS classes in `App.css`. This includes:
 - Links
 
 To modify the styling, simply update the corresponding classes in `App.css`.
-
-## Creating New Pages
-
-To create additional pages:
-
-1. Add new MDX files in the content directory
-2. Update the routing configuration if needed
 
 ## Best Practices
 
