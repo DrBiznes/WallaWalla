@@ -1,0 +1,50 @@
+# Welcome to my site
+
+This is a simple text-based website styled with Tailwind CSS and shadcn UI components.
+
+<div className="relative">
+  This paragraph has a floating note attached to it.
+  <span className="text-primary">*</span>
+  <FloatingNote position="right">
+    This is a hovering note that appears to the right of the content.
+    It will stick to the side of the viewport on larger screens.
+  </FloatingNote>
+</div>
+
+## About
+
+The design is inspired by simple text files but enhanced with modern CSS and interactive components.
+
+<div className="relative">
+  <span className="text-primary">†</span>
+  <FloatingNote position="left">
+    Here's another note, this time positioned on the left side.
+  </FloatingNote>
+  This website features minimal styling with an emphasis on readability and clean typography.
+</div>
+
+## Features
+
+- Clean, text-file-inspired design
+- Responsive layout that works on all devices
+- Side notes that hover next to the content on desktop
+- Custom styling using Tailwind and shadcn components
+
+<Card className="p-4 my-6">
+  <h3 className="text-lg font-medium mb-2">Custom Component Example</h3>
+  <p>This card is a custom component from shadcn/ui that's available directly in the MDX content.</p>
+</Card>
+
+## Code Example
+
+```typescript
+// This is a code example with syntax highlighting
+function greet(name: string): string {
+  return `Hello, ${name}!`;
+}
+
+// The styling is minimal but functional
+console.log(greet("visitor"));
+```
+
+Thanks for visiting!

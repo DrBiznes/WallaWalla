@@ -3,12 +3,23 @@ import tailwindcss from "@tailwindcss/vite"
 import react from "@vitejs/plugin-react"
 import { defineConfig } from "vite"
 
-// https://vite.dev/config/
-export default defineConfig({
-  plugins: [react(), tailwindcss()],
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
+// This async import is necessary because @mdx-js/rollup is ESM-only
+export default defineConfig(async () => {
+  const mdx = await import('@mdx-js/rollup')
+  
+  return {
+    plugins: [
+      // MDX plugin needs to run before React plugin
+      { enforce: 'pre', ...mdx.default() },
+      react({
+        include: /\.(jsx|js|ts|tsx|mdx|md)$/
+      }),
+      tailwindcss()
+    ],
+    resolve: {
+      alias: {
+        "@": path.resolve(__dirname, "./src"),
+      },
     },
-  },
+  }
 })

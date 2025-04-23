@@ -24,13 +24,8 @@ export function Layout({ children }: LayoutProps) {
 function Header() {
   return (
     <header className="border-b border-border bg-card px-4 py-3">
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
+      <div className="max-w-7xl mx-auto">
         <h1 className="text-lg font-mono font-medium">site.txt</h1>
-        <nav className="flex gap-4">
-          <a href="/" className="hover:text-primary transition-colors">Home</a>
-          <a href="/about" className="hover:text-primary transition-colors">About</a>
-          <a href="/blog" className="hover:text-primary transition-colors">Blog</a>
-        </nav>
       </div>
     </header>
   )
@@ -41,7 +36,7 @@ function LeftSidebar() {
   return (
     <aside className="w-24 md:w-48 hidden md:block">
       <div className="sticky top-4 p-4">
-        {/* Sticky left sidebar content */}
+        {/* Left sidebar content will be empty or minimal */}
       </div>
     </aside>
   )
@@ -52,7 +47,7 @@ function RightSidebar() {
   return (
     <aside className="w-24 md:w-48 hidden md:block">
       <div className="sticky top-4 p-4">
-        {/* Sticky right sidebar content */}
+        {/* Right sidebar content will be empty or minimal */}
       </div>
     </aside>
   )
@@ -63,7 +58,7 @@ function Footer() {
   return (
     <footer className="border-t border-border bg-card px-4 py-3 text-sm text-muted-foreground">
       <div className="max-w-7xl mx-auto">
-        <p>© {new Date().getFullYear()} · Simple Text Site</p>
+        <p>© {new Date().getFullYear()}</p>
       </div>
     </footer>
   )
