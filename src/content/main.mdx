@@ -1,50 +1,58 @@
-# Welcome to my site
+import { SideNote } from '../components/SideNote'
+import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card'
 
-This is a simple text-based website styled with Tailwind CSS and shadcn UI components.
+# Walla Walla Neighborhood Observation
 
-<div className="relative">
-  This paragraph has a floating note attached to it.
-  <span className="text-primary">*</span>
-  <FloatingNote position="right">
-    This is a hovering note that appears to the right of the content.
-    It will stick to the side of the viewport on larger screens.
-  </FloatingNote>
-</div>
+## Pre-Observation Research
 
-## About
-
-The design is inspired by simple text files but enhanced with modern CSS and interactive components.
+Before visiting the neighborhood, I gathered demographic information from Census and American Community Survey data. Walla Walla's population is approximately 33,000 with a diverse range of demographics and housing types.
 
 <div className="relative">
-  <span className="text-primary">†</span>
-  <FloatingNote position="left">
-    Here's another note, this time positioned on the left side.
-  </FloatingNote>
-  This website features minimal styling with an emphasis on readability and clean typography.
+  The city of Walla Walla is located in southeastern Washington state and serves as the county seat of Walla Walla County.
+  <SideNote position="right">
+    The name "Walla Walla" comes from a Native American name meaning "many waters."
+  </SideNote>
 </div>
 
-## Features
+## Observation Process
 
-- Clean, text-file-inspired design
-- Responsive layout that works on all devices
-- Side notes that hover next to the content on desktop
-- Custom styling using Tailwind and shadcn components
+I conducted a walking tour through several key areas of Walla Walla, focusing on:
+- Downtown historic district
+- Residential neighborhoods
+- Parks and public spaces
+- Alleyways and less-traveled areas
 
 <Card className="p-4 my-6">
-  <h3 className="text-lg font-medium mb-2">Custom Component Example</h3>
-  <p>This card is a custom component from shadcn/ui that's available directly in the MDX content.</p>
+  <CardHeader>
+    <CardTitle>Key Observation Areas</CardTitle>
+  </CardHeader>
+  <CardContent>
+    <p>The historic downtown area features many buildings from the late 19th century, while residential neighborhoods show a mix of architectural styles ranging from Victorian to modern construction.</p>
+  </CardContent>
 </Card>
 
-## Code Example
+## Neighborhood Characteristics
 
-```typescript
-// This is a code example with syntax highlighting
-function greet(name: string): string {
-  return `Hello, ${name}!`;
-}
+### Physical Environment
+The neighborhood features a mix of historic architecture and newer developments. Streets are generally well-maintained with consistent sidewalks in the central areas.
 
-// The styling is minimal but functional
-console.log(greet("visitor"));
-```
+### Social Dynamics
+During my observation, I noted various social interactions in public spaces, particularly in the downtown area and parks.
 
-Thanks for visiting!
+<div className="relative">
+  The farmers market serves as an important community gathering space.
+  <SideNote position="left">
+    The Walla Walla Farmers Market operates seasonally and features local produce and crafts.
+  </SideNote>
+</div>
+
+### Economic Indicators
+The business district shows signs of both established businesses and newer enterprises. There were several vacant storefronts, but also evidence of recent renovations.
+
+## Demographic Observations
+
+My observations of the neighborhood demographics appeared to align with census data in some ways, but differed in others.
+
+## Conclusion
+
+This preliminary observation provides a foundation for understanding Walla Walla's neighborhood dynamics. Further research will focus on specific redevelopment opportunities.

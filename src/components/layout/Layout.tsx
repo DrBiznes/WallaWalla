@@ -1,3 +1,4 @@
+// src/components/layout/Layout.tsx
 import { ReactNode } from 'react'
 
 interface LayoutProps {
@@ -10,7 +11,7 @@ export function Layout({ children }: LayoutProps) {
       <Header />
       <main className="flex-1 flex">
         <LeftSidebar />
-        <div className="flex-1 px-4 py-8 max-w-3xl mx-auto">
+        <div className="flex-1 px-6 py-8 max-w-3xl mx-auto">
           {children}
         </div>
         <RightSidebar />
@@ -20,34 +21,34 @@ export function Layout({ children }: LayoutProps) {
   )
 }
 
-// Simple non-sticky header
+// Simple header with title for Walla Walla neighborhood
 function Header() {
   return (
     <header className="border-b border-border bg-card px-4 py-3">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-lg font-mono font-medium">site.txt</h1>
+        <h1 className="text-lg font-mono font-medium">Walla Walla Neighborhood Observation</h1>
       </div>
     </header>
   )
 }
 
-// Left sidebar with sticky components
+// Left sidebar with sticky content
 function LeftSidebar() {
   return (
-    <aside className="w-24 md:w-48 hidden md:block">
+    <aside className="w-20 md:w-40 hidden md:block shrink-0">
       <div className="sticky top-4 p-4">
-        {/* Left sidebar content will be empty or minimal */}
+        {/* You can add sidebar content here later */}
       </div>
     </aside>
   )
 }
 
-// Right sidebar with sticky components
+// Right sidebar with sticky content
 function RightSidebar() {
   return (
-    <aside className="w-24 md:w-48 hidden md:block">
+    <aside className="w-20 md:w-40 hidden md:block shrink-0">
       <div className="sticky top-4 p-4">
-        {/* Right sidebar content will be empty or minimal */}
+        {/* You can add sidebar content here later */}
       </div>
     </aside>
   )
@@ -58,7 +59,7 @@ function Footer() {
   return (
     <footer className="border-t border-border bg-card px-4 py-3 text-sm text-muted-foreground">
       <div className="max-w-7xl mx-auto">
-        <p>© {new Date().getFullYear()}</p>
+        <p>© {new Date().getFullYear()} - Neighborhood Observation Assignment</p>
       </div>
     </footer>
   )

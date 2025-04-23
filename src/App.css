@@ -1,42 +1,118 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.mdx-content {
+  line-height: 1.6;
+  font-family: var(--font-sans);
+  width: 100%;
+  max-width: 100%;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Heading styles */
+.mdx-content h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: var(--font-serif);
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--foreground);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.mdx-content h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: var(--font-serif);
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--foreground);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.mdx-content h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  font-family: var(--font-serif);
+  margin-top: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--foreground);
 }
 
-.card {
-  padding: 2em;
+/* Paragraph styles */
+.mdx-content p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
 }
 
-.read-the-docs {
-  color: #888;
+/* Link styles */
+.mdx-content a {
+  color: var(--primary);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--primary);
+  transition: border-bottom 0.2s ease;
+}
+
+.mdx-content a:hover {
+  border-bottom: 1px solid var(--primary);
+}
+
+/* List styles */
+.mdx-content ul, .mdx-content ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.mdx-content ul {
+  list-style-type: disc;
+}
+
+.mdx-content ol {
+  list-style-type: decimal;
+}
+
+.mdx-content li {
+  margin-bottom: 0.5rem;
+}
+
+/* Block quote styles */
+.mdx-content blockquote {
+  border-left: 3px solid var(--border);
+  color: var(--muted-foreground);
+  margin-left: 0;
+  padding-left: 1rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+/* Code styles */
+.mdx-content code {
+  font-family: var(--font-mono);
+  background-color: var(--muted);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+.mdx-content pre {
+  background-color: var(--muted);
+  padding: 1rem;
+  border-radius: 5px;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+/* Horizontal rule */
+.mdx-content hr {
+  border: none;
+  border-top: 1px dashed var(--border);
+  margin: 2rem 0;
+}
+
+/* Make sure images are responsive */
+.mdx-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Ensure relative positioned elements work correctly */
+.mdx-content .relative {
+  position: relative;
 }

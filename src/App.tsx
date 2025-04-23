@@ -1,20 +1,19 @@
 // src/App.tsx
 import { Layout } from './components/layout/Layout'
-import { MDXContent } from './components/mdx/MDXProvider'
-import { lazy, Suspense } from 'react'
+import { Suspense } from 'react'
 import './App.css'
 
-// Import the single MDX file for the whole site
-const MainContent = lazy(() => import('./content/main.mdx'))
+// Import the MDX file - make sure this path is correct
+import MainContent from './content/main.mdx'
 
 function App() {
   return (
     <Layout>
-      <MDXContent>
-        <Suspense fallback={<div>Loading content...</div>}>
+      <div className="mdx-content">
+        <Suspense fallback={<div>Loading observation data...</div>}>
           <MainContent />
         </Suspense>
-      </MDXContent>
+      </div>
     </Layout>
   )
 }
