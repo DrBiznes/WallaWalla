@@ -45,7 +45,7 @@ function Header() {
               Apr 23, 2025
             </span>
             <a 
-              href="https://github.com/DrBiznes" 
+              href="https://github.com/DrBiznes/WallaWalla" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors mt-1"
