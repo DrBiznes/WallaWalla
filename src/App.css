@@ -116,3 +116,34 @@
 .mdx-content .relative {
   position: relative;
 }
+
+.toc-link {
+  display: block;
+  padding: 0.25rem 0;
+  color: var(--muted-foreground);
+  transition: color 0.2s ease;
+  text-decoration: none;
+  border-bottom: none;
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.toc-link:hover {
+  color: var(--primary);
+  border-bottom: none;
+}
+
+.toc-link.active {
+  color: var(--primary);
+  font-weight: 500;
+}
+
+/* Make sure headings have some spacing above to account for fixed header */
+.mdx-content h1,
+.mdx-content h2,
+.mdx-content h3,
+.mdx-content h4,
+.mdx-content h5,
+.mdx-content h6 {
+  scroll-margin-top: 2rem;
+}

@@ -1,5 +1,5 @@
-// src/components/layout/Layout.tsx
 import { ReactNode } from 'react'
+import { TableOfContents } from './ToC.tsx'
 
 interface LayoutProps {
   children: ReactNode
@@ -37,7 +37,7 @@ function LeftSidebar() {
   return (
     <aside className="w-20 md:w-40 hidden md:block shrink-0">
       <div className="sticky top-4 p-4">
-        {/* You can add sidebar content here later */}
+        <TableOfContents />
       </div>
     </aside>
   )
