@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { 
   BarChart, 
   Bar, 
@@ -15,11 +15,35 @@ import {
   ResponsiveContainer,
   Label
 } from 'recharts';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
+// Define types for our data
+interface WineryData {
+  year: number;
+  wineries: number;
+}
+
+interface PopulationData {
+  name: string;
+  count: number;
+  color: string;
+}
+
+interface CollegeData {
+  name: string;
+  students: number;
+  color: string;
+}
+
+interface CollegePieData {
+  name: string;
+  value: number;
+  color: string;
+}
+
 // Historical data for winery growth in Walla Walla
-const wineryGrowthData = [
+const wineryGrowthData: WineryData[] = [
   { year: 1980, wineries: 1 },
   { year: 1990, wineries: 6 },
   { year: 2000, wineries: 23 },
@@ -30,7 +54,7 @@ const wineryGrowthData = [
 ];
 
 // Population data for comparison
-const populationData = [
+const populationData: PopulationData[] = [
   {
     name: "Permanent Residents",
     count: 33000,
@@ -44,7 +68,7 @@ const populationData = [
 ];
 
 // College enrollment data
-const collegeData = [
+const collegeData: CollegeData[] = [
   {
     name: "Whitman College",
     students: 1523,
@@ -63,14 +87,14 @@ const collegeData = [
 ];
 
 // College comparative pie chart data
-const collegePieData = [
+const collegePieData: CollegePieData[] = [
   { name: "Whitman College", value: 1523, color: "#82ca9d" },
   { name: "Walla Walla University", value: 1432, color: "#ff7300" },
   { name: "Walla Walla Community College", value: 2662, color: "#0088fe" }
 ];
 
 // Format large numbers with commas
-const formatNumber = (num) => {
+const formatNumber = (num: number): string => {
   return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 };
 
@@ -98,7 +122,7 @@ const PopulationDynamicsChart = () => {
     return () => window.removeEventListener('resize', checkIfMobile);
   }, []);
   
-  const handleSelectionChange = (value) => {
+  const handleSelectionChange = (value: string): void => {
     setActiveTab(value);
   };
   

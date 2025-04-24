@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, Polyline } from 'react-leaflet';
-import { Icon } from 'leaflet';
+import { Icon, LatLngTuple } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
 const defaultIcon = new Icon({
@@ -12,14 +12,20 @@ const defaultIcon = new Icon({
   shadowSize: [41, 41]
 });
 
-const locations = [
+interface Location {
+  name: string;
+  position: LatLngTuple;
+  description: string;
+}
+
+const locations: Location[] = [
   { name: "Marcus Whitman Hotel", position: [46.06770840234916, -118.34031622958824], description: "Starting point of observation, a Renaissance Revival landmark from 1928" },
   { name: "Heritage Square", position: [46.068356385030995, -118.33687870834854], description: "Public plaza with the 'Odd Fellows Temple' historical display" },
   { name: "Baker Boyer Bank", position: [46.0665026909256, -118.33971968052406], description: "Washington's first bank, founded in 1869" },
   { name: "Whitman College", position: [46.070984282922815, -118.32961560531767], description: "Liberal arts college established in 1859" }
 ];
 
-const observationRoute = [
+const observationRoute: LatLngTuple[] = [
   [46.06770840234916, -118.34031622958824],
   [46.0665026909256, -118.33971968052406],
   [46.068356385030995, -118.33687870834854],
@@ -57,7 +63,7 @@ export function ObservationMap() {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
           {locations.map((location, index) => (
-            <Marker key={index} position={location.position} color="green" icon={defaultIcon}>
+            <Marker key={index} position={location.position} icon={defaultIcon}>
               <Popup>
                 <strong>{location.name}</strong><br />
                 {location.description}
