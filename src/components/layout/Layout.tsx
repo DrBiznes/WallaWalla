@@ -37,9 +37,16 @@ function Header() {
     <header className="border-b border-border bg-card px-4 py-3">
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center">
-          <span className="text-lg font-serif font-semibold text-primary">
-            Walla Walla, WA
-          </span>
+          <div className="flex items-center gap-3">
+            <img 
+              src="/greenflag.png"
+              alt="Green flag logo"
+              className="h-12 w-auto" // Increased size to span both lines
+            />
+            <span className="text-lg font-serif font-semibold text-primary">
+              Walla Walla, WA
+            </span>
+          </div>
           <div className="flex flex-col items-end">
             <span className="text-sm text-muted-foreground font-mono">
               Apr 23, 2025
