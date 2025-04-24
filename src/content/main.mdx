@@ -1,4 +1,5 @@
 import ObservationMap from '../components/ObservationMap.tsx';
+import ImageCarousel from '../components/ImageCarousel';
 
 ## **Introduction**
 
@@ -38,7 +39,11 @@ What fascinated me most was seeing how these historic buildings have been repurp
 
 This pattern of adaptive reuse appeared consistently throughout downtown and surrounding blocks. The ornate details of cornices, window surrounds, and decorative brickwork have been meticulously maintained, creating a distinctive sense of place that feels authentic despite serving contemporary commercial purposes. It became clear that Walla Walla has strategically leveraged its architectural heritage as both cultural asset and economic engine for its wine tourism industry.
 
-**Custom Component #2: Before/After Image Slider showing historical photos of key buildings compared with their current state, emphasizing preservation efforts and architectural continuity**
+<ImageCarousel 
+  autoPlayInterval={6000} 
+  showIndicators={true}
+  showArrows={true}
+/>
 
 ### **Streets and Public Spaces: Form and Function**
 

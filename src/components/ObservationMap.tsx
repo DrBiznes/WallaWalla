@@ -57,7 +57,7 @@ export function ObservationMap() {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
           {locations.map((location, index) => (
-            <Marker key={index} position={location.position} icon={defaultIcon}>
+            <Marker key={index} position={location.position} color="green" icon={defaultIcon}>
               <Popup>
                 <strong>{location.name}</strong><br />
                 {location.description}
