@@ -11,9 +11,9 @@ export function Layout({ children }: LayoutProps) {
   return (
     <div className="min-h-screen flex flex-col font-sans text-foreground bg-background">
       <Header />
-      <main className="flex-1 flex">
+      <main className="flex-1 flex flex-col md:flex-row w-full overflow-hidden">
         <LeftSidebar />
-        <div className="flex-1 px-6 py-8 max-w-3xl mx-auto">
+        <div className="flex-1 px-4 sm:px-6 py-8 w-full mx-auto max-w-3xl">
           {children}
           <Footer />
         </div>
@@ -65,7 +65,7 @@ function Header() {
 // Left sidebar with sticky content
 function LeftSidebar() {
   return (
-    <aside className="w-20 md:w-40 hidden md:block shrink-0">
+    <aside className="w-0 md:w-40 hidden md:block shrink-0">
       <div className="sticky top-4 p-4">
         <TableOfContents />
       </div>
@@ -76,7 +76,7 @@ function LeftSidebar() {
 // Right sidebar with sticky content
 function RightSidebar() {
   return (
-    <aside className="w-20 md:w-40 hidden md:block shrink-0">
+    <aside className="w-0 md:w-40 hidden md:block shrink-0">
       <div className="sticky top-4 p-4">
         {/* Sidebar content can be added here */}
       </div>
