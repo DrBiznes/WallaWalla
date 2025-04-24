@@ -14,11 +14,12 @@ export function TableOfContents() {
   const observerRef = useRef<IntersectionObserver | null>(null)
 
   useEffect(() => {
-    // Find all headings in the MDX content
+    // Find all h2 headings in the MDX content (main sections only)
     const mdxContent = document.querySelector('.mdx-content')
     if (!mdxContent) return
 
-    const headingElements = mdxContent.querySelectorAll('h1, h2, h3, h4, h5, h6')
+    // Only select h2 headings to avoid component headers
+    const headingElements = mdxContent.querySelectorAll('h2')
     
     // Process headings to create TOC items
     const items: TOCItem[] = []
@@ -74,33 +75,24 @@ export function TableOfContents() {
       <ul className="font-mono space-y-1.5">
         {headings.map((heading) => (
           <li 
-            key={heading.id}
-            className={cn(
-              "transition-colors duration-200",
-              {
-                "pl-0": heading.level === 1,
-                "pl-1": heading.level === 2,
-                "pl-3": heading.level === 3,
-                "pl-4": heading.level > 3
-              }
-            )}
+          key={heading.id}
+          className="transition-colors duration-200"
           >
-            
-            <a
-              href={`#${heading.id}`}
-              className={cn(
-                "block py-1 hover:text-primary transition-colors",
-                activeId === heading.id ? "text-primary font-medium" : "text-muted-foreground"
-              )}
-              onClick={(e: React.MouseEvent) => {
-                e.preventDefault()
-                document.getElementById(heading.id)?.scrollIntoView({
-                  behavior: 'smooth'
-                })
-              }}
-            >
-              {heading.text}
-            </a>
+          <a
+            href={`#${heading.id}`}
+            className={cn(
+            "block py-1 hover:text-primary transition-colors text-wrap break-words",
+            activeId === heading.id ? "text-primary font-medium" : "text-muted-foreground"
+            )}
+            onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
+            e.preventDefault();
+            document.getElementById(heading.id)?.scrollIntoView({
+              behavior: 'smooth'
+            });
+            }}
+          >
+            {heading.text}
+          </a>
           </li>
         ))}
       </ul>
